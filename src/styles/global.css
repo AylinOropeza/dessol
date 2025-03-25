@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:global(html) {
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE y Edge */
+}
+
+
+@font-face {
+    font-family: 'Simplifica';
+    src: url('/fonts/simplifica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --color-gray: oklch(0.867 0.005 228.828);
+    --color-yellow: oklch(0.791 0.137 86.585);
+    --color-red: oklch(0.528 0.174 26.493);
+    --color-black: oklch(0.191 0.031 222.823);
+    --color-093041FF: oklch(0.292 0.052 232.075);
+    --color-1C4554FF: oklch(0.368 0.052 224.997);
+    --color-2C5E6CFF: oklch(0.453 0.058 218.579);
+
+    --font-simplifica: 'Simplifica', sans-serif;
+    --font-century: century, serif;
+}
+

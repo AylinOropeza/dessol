@@ -1,0 +1,98 @@
+---
+import Carousel from "./Carousel.astro";
+
+const programas = [
+    {
+        img: "/gallery/1.webp",
+        style:"text-3xl",
+        text: "Contamos con 3 programas"
+    },
+    {
+        img: "/gallery/2.webp",
+        style:"text-3xl",
+        text: "1. Comunidad en Acción"
+    },
+    {
+        img: "/gallery/3.webp",
+        style:"text-2xl",
+        text: "Un programa de extensión comunitaria con enfoque bíblico es una iniciativa que busca servir y beneficiar a la comunidad, basándose en los principios y valores bíblicos." },
+    {
+        img: "/gallery/4.webp",
+        style:"text-3xl",
+        text: "2. Cultivando el potencial"
+    },
+    {
+        img: "/gallery/5.webp",
+        style:"text-2xl",
+        text: "Busca transformar vidas y comunidades a través del desarrollo integral de los niños y jóvenes."
+    },
+    {
+        img: "/gallery/6.webp",
+        style:"text-3xl",
+        text: "3. Creciendo Juntos"
+    },
+    {
+        img: "/gallery/7.webp",
+        style:"text-2xl",
+        text: "Un Programa de Fortalecimiento Familiar pretende transformar vidas y comunidades a través del fortalecimiento de las familias."
+    },
+]
+---
+<article class="bg-white">
+    {
+        programas.map(item => {return (
+                <section class="img-container relative flex justify-center items-center h-screen snap-start">
+                    <div>
+                        <img src={item.img} class="w-4/6 h-auto rounded-2xl" alt="" />
+                        <span class=`${item.style} bg-093041FF opacity-80 p-4 rounded-4xl`>{item.text}</span>
+                    </div>
+                </section>
+        )})
+    }
+    <div class="progress"></div>
+</article>
+<!--<section class="flex h-[70vh] w-full justify-center items-center bg-white">-->
+     <!--<Carousel />-->
+<!--</section>-->
+
+<script type="module">
+    import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12/+esm"
+
+    // Progress bar representing gallery scroll
+    scroll(animate(".progress", { scaleX: [0, 1] }, { ease: "linear" }))
+
+    document.querySelectorAll(".img-container").forEach((section) => {
+        const header = section.querySelector("span")
+        scroll(animate(header, { y: [-400, 400] }, { ease: "linear" }), {
+            target: header,
+        })
+    })
+</script>
+
+<style>
+    .img-container img {
+        width: 1000px;
+        height: 600px;
+    }
+
+    .img-container span {
+        margin: 0;
+        font-weight: 700;
+        line-height: 1.2;
+        position: absolute;
+        display: inline-block;
+        top: calc(50% - 25px);
+        left: calc(10% + 100px);
+        max-width: 600px;
+    }
+
+    .progress {
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--color-093041FF);
+        bottom: 40px;
+        transform: scaleX(0);
+    }
+</style>

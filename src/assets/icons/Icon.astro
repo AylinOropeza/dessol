@@ -1,0 +1,18 @@
+---
+import Facebook from "./Facebook.astro";
+import Gmail from "./Gmail.astro";
+import WhatsApp from "./WhatsApp.astro";
+import Location from "./Location.astro";
+
+const { name } = Astro.props;
+
+const icons = {
+    "facebook": Facebook,
+    "gmail": Gmail,
+    "whatsapp": WhatsApp,
+    "location": Location,
+}
+
+const Component = icons[name];
+---
+<Component />
