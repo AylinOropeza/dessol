@@ -1,40 +1,66 @@
 ---
-import Carousel from "./Carousel.astro";
+import { Image } from 'astro:assets'
+import img01 from '../../assets/gallery/0-1.webp'
+import img11 from '../../assets/gallery/1-1.webp'
+import img12 from '../../assets/gallery/1-2.webp'
+import img13 from '../../assets/gallery/1-3.webp'
+import img21 from '../../assets/gallery/2-1.webp'
+import img22 from '../../assets/gallery/2-2.webp'
+import img23 from '../../assets/gallery/2-3.webp'
+import img31 from '../../assets/gallery/3-1.webp'
+import img32 from '../../assets/gallery/3-2.webp'
+import img33 from '../../assets/gallery/3-3.webp'
 
 const programas = [
     {
-        img: "/gallery/1.webp",
+        img: img01,
         style:"text-3xl",
         text: "Contamos con 3 programas"
     },
     {
-        img: "/gallery/2.webp",
+        img: img11,
         style:"text-3xl",
         text: "1. Comunidad en Acción"
     },
     {
-        img: "/gallery/3.webp",
+        img: img12,
         style:"text-2xl",
-        text: "Un programa de extensión comunitaria con enfoque bíblico es una iniciativa que busca servir y beneficiar a la comunidad, basándose en los principios y valores bíblicos." },
+        text: "Un programa de extensión comunitaria con enfoque bíblico es una iniciativa que busca servir y beneficiar a la comunidad, basándose en los principios y valores bíblicos."
+    },
     {
-        img: "/gallery/4.webp",
+        img: img13,
+        style:"text-2xl",
+        text: "Apoyo emocional y espiritual. Demostrar el amor de Dios a través de acciones prácticas hacia el prójimo y personas en situación de vulnerabilidad."
+    },
+    {
+        img: img21,
         style:"text-3xl",
         text: "2. Cultivando el potencial"
     },
     {
-        img: "/gallery/5.webp",
+        img: img22,
         style:"text-2xl",
         text: "Busca transformar vidas y comunidades a través del desarrollo integral de los niños y jóvenes."
     },
     {
-        img: "/gallery/6.webp",
+        img: img23,
+        style:"text-2xl",
+        text: "Proyectos como apoyo escolar, talleres de arte y música cristianas, oratoria y comunicación."
+    },
+    {
+        img: img31,
         style:"text-3xl",
         text: "3. Creciendo Juntos"
     },
     {
-        img: "/gallery/7.webp",
+        img: img32,
         style:"text-2xl",
         text: "Un Programa de Fortalecimiento Familiar pretende transformar vidas y comunidades a través del fortalecimiento de las familias."
+    },
+    {
+        img: img33,
+        style:"text-2xl",
+        text: "Talleres de comunicación efectiva para matrimonios, apoyo para padres, retiros y encuentros familiares."
     },
 ]
 ---
@@ -43,7 +69,7 @@ const programas = [
         programas.map(item => {return (
                 <section class="img-container relative flex justify-center items-center h-screen snap-start">
                     <div>
-                        <img src={item.img} class="w-4/6 h-auto rounded-2xl" alt="" />
+                        <Image src={item.img} class="w-4/6 h-auto rounded-2xl" alt="" />
                         <span class=`${item.style} bg-093041FF opacity-80 p-4 rounded-4xl`>{item.text}</span>
                     </div>
                 </section>
