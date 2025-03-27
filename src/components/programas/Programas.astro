@@ -69,7 +69,7 @@ const programas = [
         programas.map(item => {return (
                 <section class="img-container relative flex justify-center items-center h-screen snap-start">
                     <div>
-                        <Image src={item.img} class="w-4/6 h-auto rounded-2xl" alt="" />
+                        <Image src={item.img} class="w-4/6 h-auto rounded-2xl object-cover" alt="Galeria de imagenes" />
                         <span class=`${item.style} bg-093041FF opacity-80 p-4 rounded-4xl`>{item.text}</span>
                     </div>
                 </section>
@@ -84,7 +84,6 @@ const programas = [
 <script type="module">
     import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12/+esm"
 
-    // Progress bar representing gallery scroll
     scroll(animate(".progress", { scaleX: [0, 1] }, { ease: "linear" }))
 
     document.querySelectorAll(".img-container").forEach((section) => {
